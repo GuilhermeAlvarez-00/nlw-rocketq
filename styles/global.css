@@ -97,6 +97,17 @@ button.outlined,
   color: var(--blue);
 }
 
+button.red,
+.button.red {
+  background: var(--red);
+}
+
+button.gray,
+.button.gray {
+  color: var(--gray-dark);
+  background: var(--gray-light);
+}
+
 /* HEADER */
 .content header {
   width: 80%;
