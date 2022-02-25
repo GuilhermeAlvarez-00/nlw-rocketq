@@ -10,6 +10,7 @@ routes.get('/create-pass', (req, res) =>
 )
 
 routes.get('/room/:room', roomController.open)
-
 routes.post('/create-room', roomController.create)
+
 routes.post('/question/:room/:question/:action', questionController.index)
+routes.post('/question/create/:room', questionController.create)

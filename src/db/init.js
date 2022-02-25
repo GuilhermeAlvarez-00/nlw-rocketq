@@ -17,6 +17,7 @@ const initDb = {
       `
       CREATE TABLE IF NOT EXISTS questions (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
+        room INT,
         title TEXT,
         read INT
       )`
