@@ -9,7 +9,7 @@ routes.get('/create-pass', (req, res) =>
   res.render('index', { page: 'create-pass' })
 )
 
-routes.get('/room/:room', (req, res) => res.render('room'))
+routes.get('/room/:room', roomController.open)
 
 routes.post('/create-room', roomController.create)
 routes.post('/question/:room/:question/:action', questionController.index)
