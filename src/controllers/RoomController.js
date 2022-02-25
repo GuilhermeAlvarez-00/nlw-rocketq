@@ -20,7 +20,6 @@ export default {
       isRoom = roomsIds.some(room => room.id === roomId)
 
       if (!isRoom) {
-        console.log('room created')
         await db.run(
           `INSERT INTO rooms (id, pass) VALUES (${Number(roomId)}, ${password})`
         )
