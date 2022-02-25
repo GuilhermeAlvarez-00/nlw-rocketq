@@ -1,11 +1,12 @@
-const express = require('express')
-const path = require('path')
-const routes = require('./routes')
+import express from 'express'
+import path, { dirname } from 'path'
+import { fileURLToPath } from 'url'
+import { routes } from './routes.js'
 
 const server = express()
 
 server.set('view engine', 'ejs')
-server.set('views', path.join(__dirname, 'views'))
+server.set('views', path.join(dirname(fileURLToPath(import.meta.url)), 'views'))
 
 server.use(express.urlencoded({ extended: true }))
 server.use(routes)

@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   create(req, res) {
     let roomId = 12345
 

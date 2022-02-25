@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   index(req, res) {
     const { room: roomId, question: questionId, action } = req.params
     const { password } = req.body
