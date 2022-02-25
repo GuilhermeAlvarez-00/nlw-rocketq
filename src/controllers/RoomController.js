@@ -34,6 +34,7 @@ export default {
   async open(req, res) {
     const db = await openDb()
     const roomId = req.params.room
+    let isNoQuestion
 
     const questions = await db.all(
       `SELECT * FROM questions WHERE room = ${roomId} AND read = 0`
@@ -42,6 +43,18 @@ export default {
       `SELECT * FROM questions WHERE room = ${roomId} AND read = 1`
     )
 
-    res.render('room', { roomId, questions, questionsRead })
+    if (questions.length === 0) {
+      if (questionsRead.length === 0) {
+        isNoQuestion = true
+      }
+    }
+
+    res.render('room', { roomId, questions, questionsRead, isNoQuestion })
+  },
+
+  async enter(req, res) {
+    const roomId = req.body.roomId
+
+    res.redirect(`room/${roomId}`)
   }
 }
